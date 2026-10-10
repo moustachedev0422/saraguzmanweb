@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sara Guzmán — Centro de actividad (Web/Hub)
 
 React + Vite + Tailwind CSS v4 + React Router + Framer Motion. Listo para desplegar en Vercel.
@@ -65,3 +66,7 @@ formulario nativo (mismo look and feel 100% del sitio, sin iframe) puedo constru
 los campos exactos del documento; en ese caso hay que resolver aparte a dónde van las
 respuestas (Tally vía API, un backend propio, Formspree, etc.), porque hoy no hay ningún
 servicio de envío conectado.
+=======
+# saraguzmanweb
+Landing Sara Guzman
+>>>>>>> 2dcdbacb7dd3b61cd03cf8635cebae6dad568811
