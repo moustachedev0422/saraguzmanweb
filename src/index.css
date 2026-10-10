@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SISTEMA VISUAL — extraído de 01.jpg / 02.jpg / 03.jpg (referencia) y
+   contrastado con Manual de identidad: negro, blanco cálido, gris cálido,
+   café cálido; colores prohibidos: rosado y morado (no se usan).
+   ========================================================================== */
+@theme {
+  --font-serif: "cesso", "Georgia", serif;
+  --font-sans: "vista-sans", "Helvetica Neue", Arial, sans-serif;
+
+  --color-ink: #10182b;        /* navy casi negro — fondo oscuro de piezas 03.jpg */
+  --color-ink-2: #1b2740;      /* navy secundario */
+  --color-cream: #f3efe7;      /* blanco cálido — fondo claro dominante */
+  --color-cream-2: #ece4d6;    /* blanco cálido, un tono más profundo */
+  --color-sand: #e3c9a0;       /* beige/camel — titulares sobre fondo oscuro */
+  --color-sand-2: #cba876;     /* camel más saturado, acentos y bordes */
+  --color-stone: #8b8478;      /* gris cálido — texto secundario */
+  --color-cafe: #4a3c30;       /* café cálido — texto sobre fondo claro */
+  --color-mark: #eddb5e;       /* amarillo resaltador — acento editorial, uso mínimo */
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-cafe);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Textura de grano sutil sobre toda la experiencia — presente en las 3
+   piezas de referencia como una capa de ruido fotográfico. */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Marca circular tipo "resaltador" — acento editorial visto en 01/03.jpg */
+.mark-circle {
+  position: relative;
+  display: inline-block;
+}
+.mark-circle::after {
+  content: '';
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  top: -14%;
+  bottom: -6%;
+  border: 2px solid var(--color-mark);
+  border-radius: 50% / 45%;
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+
+.container-page {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container-page { padding-inline: 3rem; }
+}
