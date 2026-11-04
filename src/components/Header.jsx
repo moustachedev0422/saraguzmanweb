@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { nav } from '../data/content.js'
 import Wordmark from './Wordmark.jsx'
@@ -25,28 +25,30 @@ export default function Header() {
         scrolled ? 'bg-cream/90 backdrop-blur-sm border-b border-cafe/10' : 'bg-transparent'
       }`}
     >
-      <div className="container-page flex items-center justify-between py-4 md:py-5">
+      <div className="container-page flex items-center justify-between py-2 md:py-2">
         <Wordmark />
 
         <nav className="hidden md:flex items-center gap-8">
-          {nav.filter((n) => !n.cta).map((item) => (
+          {nav.filter((n) => !n.cta).map((item) => item.anchor ? (
+            <Link key={item.to} to={item.to} className="text-sm tracking-wide text-stone transition-colors hover:text-ink">
+              {item.label}
+            </Link>
+          ) : (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `text-sm tracking-wide transition-colors ${
-                  isActive ? 'text-ink' : 'text-stone hover:text-ink'
-                }`
+                `text-sm tracking-wide transition-colors ${isActive ? 'text-ink' : 'text-stone hover:text-ink'}`
               }
             >
               {item.label}
             </NavLink>
           ))}
           <NavLink
-            to="/creemos-juntos"
+            to="/empezar"
             className="text-sm tracking-wide px-5 py-2.5 rounded-full bg-ink text-cream hover:bg-ink-2 transition-colors"
           >
-            Creemos juntos
+            Empezar
           </NavLink>
         </nav>
 
@@ -78,14 +80,21 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.08 * i, duration: 0.5 }}
                 >
-                  <NavLink
+                  {item.anchor ? <Link
                     to={item.to}
                     onClick={() => setOpen(false)}
                     className="block py-3 text-3xl font-serif"
                     style={{ fontFamily: 'var(--font-serif)' }}
                   >
                     {item.label}
-                  </NavLink>
+                  </Link> : <NavLink
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                    className="block py-3 text-3xl font-serif"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                  >
+                    {item.label}
+                  </NavLink>}
                 </motion.div>
               ))}
             </nav>

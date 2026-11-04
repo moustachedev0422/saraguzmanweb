@@ -39,7 +39,11 @@ export default function Footer() {
                 Instagram — {brand.instagram.handle}
               </a>
             </li>
-            <li className="text-cream/40">TikTok — {brand.tiktok.status}</li>
+            <li>
+              <a href={brand.tiktok.url} target="_blank" rel="noreferrer" className="hover:text-sand transition-colors">
+                TikTok — {brand.tiktok.handle}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

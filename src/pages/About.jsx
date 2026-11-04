@@ -1,115 +1,48 @@
+import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal.jsx'
 import { about } from '../data/content.js'
-
-function PlaceholderBlock({ label }) {
-  return (
-    <div className="border border-dashed border-cafe/30 rounded-2xl p-10 flex items-center justify-center text-center text-sm text-stone italic min-h-[220px]">
-      {label}
-    </div>
-  )
-}
 
 export default function About() {
   return (
     <>
-      <section className="pt-40 pb-20 md:pt-48 md:pb-24">
-        <div className="container-page grid md:grid-cols-[1.1fr_0.9fr] gap-14 items-end">
+      <section className="relative isolate overflow-hidden bg-cream pt-40 pb-24 md:pt-48 md:pb-32">
+        <img
+          src="/assets/banner-sara.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-75"
+        />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-cream via-cream/85 to-cream/25" />
+        <div className="container-page max-w-4xl">
           <Reveal>
-            <p className="text-xs tracking-[0.35em] uppercase text-stone mb-6">{about.eyebrow}</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-ink leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>
+            <p className="text-xs tracking-[0.35em] uppercase text-stone">Sara</p>
+            <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[0.98] text-ink md:text-6xl" style={{ fontFamily: 'var(--font-serif)' }}>
               {about.title}
             </h1>
-            <p className="mt-4 text-sm uppercase tracking-wide text-stone">{about.role}</p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <PlaceholderBlock label={about.placeholders.fotografia} />
+            <p className="mt-10 font-serif text-2xl text-ink md:text-3xl" style={{ fontFamily: 'var(--font-serif)' }}>{about.lead}</p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-cafe/80 md:text-xl">{about.intro}</p>
+            <Link to="#sobre-sara" className="mt-9 inline-flex rounded-full bg-ink px-6 py-3 text-sm text-cream transition-colors hover:bg-ink-2">
+              {about.cta}
+            </Link>
           </Reveal>
         </div>
       </section>
 
-      {/* Bio corta — texto real de Sobre mi.docx */}
-      <section className="pb-24 md:pb-32">
-        <div className="container-page max-w-2xl">
-          {about.paragraphs.map((p, i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <p className="text-lg md:text-xl leading-relaxed text-cafe/80 mb-6">{p}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Filosofía — Historia / Misión / Visión / Valores (Descripción general.docx.pdf) */}
-      <section className="bg-cream-2 py-24 md:py-32">
-        <div className="container-page">
+      <section id="sobre-sara" className="scroll-mt-24 bg-cream-2 py-24 md:py-32">
+        <div className="container-page max-w-4xl">
           <Reveal>
-            <h2 className="font-serif text-3xl md:text-4xl text-ink mb-14" style={{ fontFamily: 'var(--font-serif)' }}>
-              Filosofía
-            </h2>
+            <p className="text-xs tracking-[0.35em] uppercase text-stone">Sobre Sara</p>
           </Reveal>
-
-          <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <Reveal>
-                <h3 className="text-xs tracking-[0.3em] uppercase text-stone mb-6">Historia</h3>
-              </Reveal>
-              <div className="space-y-5">
-                {about.filosofia.historia.map((p, i) => (
-                  <Reveal key={i} delay={i * 0.06}>
-                    <p className="text-cafe/75 leading-relaxed">{p}</p>
-                  </Reveal>
+          <div className="mt-12 grid gap-px bg-cafe/10 md:grid-cols-3">
+            {about.sections.map((section, index) => (
+              <Reveal key={section.title} delay={index * 0.08} className="bg-cream p-8 md:p-10">
+                <h2 className="font-serif text-2xl text-ink" style={{ fontFamily: 'var(--font-serif)' }}>{section.title}</h2>
+                {section.body.split('\n\n').map((paragraph) => (
+                  <p key={paragraph} className="mt-5 leading-relaxed text-cafe/75">{paragraph}</p>
                 ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-10">
-              <Reveal>
-                <h3 className="text-xs tracking-[0.3em] uppercase text-stone mb-4">Misión</h3>
-                <p className="font-serif text-2xl text-ink leading-snug" style={{ fontFamily: 'var(--font-serif)' }}>
-                  {about.filosofia.mision}
-                </p>
               </Reveal>
-              <Reveal delay={0.1}>
-                <h3 className="text-xs tracking-[0.3em] uppercase text-stone mb-4">Visión</h3>
-                <p className="font-serif text-2xl text-ink leading-snug" style={{ fontFamily: 'var(--font-serif)' }}>
-                  {about.filosofia.vision}
-                </p>
-              </Reveal>
-            </div>
+            ))}
           </div>
-
-          <div className="mt-20">
-            <Reveal>
-              <h3 className="text-xs tracking-[0.3em] uppercase text-stone mb-8">Valores</h3>
-            </Reveal>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-cafe/10">
-              {about.filosofia.valores.map((v, i) => (
-                <Reveal key={v.title} delay={i * 0.05} className="bg-cream p-8">
-                  <h4 className="font-serif text-xl text-ink mb-2" style={{ fontFamily: 'var(--font-serif)' }}>
-                    {v.title}
-                  </h4>
-                  <p className="text-sm text-cafe/70 leading-relaxed">{v.description}</p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Estructura flexible pendiente — experiencia y proyectos */}
-      <section className="py-24 md:py-32">
-        <div className="container-page grid md:grid-cols-2 gap-10">
-          <Reveal>
-            <h3 className="font-serif text-2xl text-ink mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-              Experiencia
-            </h3>
-            <PlaceholderBlock label={about.placeholders.experiencia} />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h3 className="font-serif text-2xl text-ink mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
-              Proyectos
-            </h3>
-            <PlaceholderBlock label={about.placeholders.proyectos} />
-          </Reveal>
         </div>
       </section>
     </>

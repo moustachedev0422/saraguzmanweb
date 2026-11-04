@@ -17,24 +17,21 @@ export const brand = {
   role: 'Arquitecta de Proyectos',
   email: 'saraguzman@proyectosg.com',
   instagram: { handle: 'projects.sg', url: 'https://www.instagram.com/projects.sg' },
-  tiktok: { handle: null, url: null, status: 'Pendiente de definir' },
+  tiktok: { handle: '@projects.sg', url: 'https://www.tiktok.com/@projects.sg', status: '@projects.sg' },
   creemosJuntosForm: 'https://tally.so/r/9q2KgQ',
 }
 
 export const nav = [
-  { label: 'Home', to: '/' },
-  { label: 'Metodología', to: '/metodologia' },
-  { label: 'Sobre mí', to: '/sobre-mi' },
-  { label: 'Blog', to: '/laboratorio-de-suenos' },
-  { label: 'Creemos juntos', to: '/creemos-juntos', cta: true },
+  { label: 'Inicio', to: '/' },
+  { label: 'Explorar', to: '/explorar' },
+  { label: 'Sara', to: '/sara' },
+  { label: 'Empezar', to: '/empezar', cta: true },
 ]
 
 export const home = {
-  heroKicker: 'Centro de actividad',
-  heroTitle: 'Claridad y estructura para proyectos con propósito',
-  heroSub:
-    'Un espacio que reúne el universo profesional de Sara Guzmán: su filosofía, su metodología, sus proyectos y su forma de acompañar procesos.',
-  heroCta: { label: 'Creemos juntos', to: '/creemos-juntos' },
+  heroTitle: 'El orden de los sueños.',
+  heroQuestion: '¿Qué quieres que exista?',
+  heroCta: { label: 'Iniciar', to: '/#momento-cero' },
   // Frases reales de "Frases para imágenes de Instagram.docx", también presentes
   // en las piezas de referencia 01/02/03.jpg — usadas como micro-relato de scroll.
   scrollStory: [
@@ -45,31 +42,31 @@ export const home = {
   universe: [
     {
       key: 'metodologia',
-      title: 'Metodología',
-      subtitle: 'Momento Cero',
-      description: 'La estructura detrás de Momento Cero. Mi acompañamiento.',
-      to: '/metodologia',
+      title: 'Momento Zero',
+      subtitle: 'Momento Zero',
+      description: 'La estructura detrás de Momento Zero. Mi acompañamiento.',
+      to: '/#momento-cero',
     },
     {
       key: 'sobre-mi',
-      title: 'Sobre mí',
+      title: 'Sara',
       subtitle: 'Sara Guzmán Arroyo',
       description: 'Quién soy y qué construyo.',
-      to: '/sobre-mi',
+      to: '/sara',
     },
     {
       key: 'laboratorio',
-      title: 'Laboratorio de sueños',
+      title: 'Explorar',
       subtitle: 'Journal',
       description: 'Artículos y actividades.',
-      to: '/laboratorio-de-suenos',
+      to: '/explorar',
     },
     {
-      key: 'creemos-juntos',
-      title: 'Creemos juntos',
+      key: 'empezar',
+      title: 'Empezar',
       subtitle: 'Solicitar una cita',
-      description: 'Un espacio para iniciar un proceso y solicitar una cita.',
-      to: '/creemos-juntos',
+      description: 'Cuestionario para solicitud de cita.',
+      to: '/empezar',
     },
   ],
 }
@@ -118,42 +115,15 @@ export const methodology = {
 }
 
 export const about = {
-  eyebrow: 'Sobre mí',
-  title: 'Quién soy y qué construyo',
-  role: 'Arquitecta de Proyectos',
-  paragraphs: [
-    'Soy Sara Guzmán. Me apasionan el orden, las ideas y los proyectos que tienen un propósito detrás. A lo largo de mi experiencia he descubierto que una de mis mayores capacidades está en escuchar, observar y encontrar estructura donde otros ven muchas cosas dispersas.',
-    'Me gusta entender cómo funciona cada proyecto, qué quiere llegar a ser y qué necesita para poder sostenerse. No parto de fórmulas hechas; parto de la realidad de cada persona, idea o proyecto.',
-    'Desde la Arquitectura de Proyectos, acompaño ese proceso: ayudo a ordenar, definir y construir las bases que harán posible que una idea tome forma, avance y crezca sin perder aquello que la hace propia.',
+  title: '¿Quién está detrás de las preguntas?',
+  lead: 'Soy Sara Guzmán.',
+  intro: 'Acompaño el momento en que un sueño empieza a convertirse en algo que puede construirse.',
+  cta: 'Conocer a Sara',
+  sections: [
+    { title: 'Quién soy', body: 'Soy Sara Guzmán.\n\nMe interesan las ideas, los proyectos y todo lo que puede llegar a existir cuando alguien decide tomarse en serio lo que imagina.' },
+    { title: 'Cómo miro los proyectos', body: 'Cada proyecto es una posibilidad de transformarnos y dejar una huella propia en el mundo.' },
+    { title: 'Lo que hago', body: 'Ordeno, defino y doy forma a las bases que permiten que una idea pueda avanzar sin perder lo que la hace propia.' },
   ],
-  // Contenido real tomado de "2. Descripción general.docx.pdf" (Documento Madre),
-  // que la ficha de "Sobre mí" prevé bajo "Filosofía". No se resume ni se reescribe.
-  filosofia: {
-    historia: [
-      'La idea de Sara Guzmán nació de una pasión por los proyectos, el orden y las ideas que tienen sentido. Desde siempre ha existido una necesidad de imaginar, organizar y construir; con el tiempo, esa forma de ver el mundo encontró en los proyectos un lugar para convertirse en algo más.',
-      'En 2022 nació el sueño de crear una forma propia de acompañar a quienes tienen una idea que realmente les mueve. En 2025 comenzó a tomar forma profesional, construyendo poco a poco los documentos, herramientas y metodología que hoy la sostienen.',
-      'Pero también ha sido un camino de aprendizaje. Aprender a soñar, construir y darle forma a mis propios sueños me ha enseñado a comprender mejor los de otros. Por eso, hoy quiero acompañar a las personas a encontrar aquello que realmente les hace vibrar y, cuando lo encuentran, ayudarlas a darle una forma real.',
-      'Porque no todo lo que imaginamos tiene que convertirse en un proyecto. Primero hay que descubrir si nace de nosotros, tiene sentido y merece ser construido.',
-    ],
-    mision:
-      'Acompañar a personas, marcas y organizaciones a convertir ideas con propósito en proyectos reales, dándoles claridad y estructura sin perder su esencia.',
-    vision:
-      'Ver cada vez más personas construyendo aquello que realmente sueñan, encontrando en sus proyectos una forma de vivir con sentido, plenitud y coherencia con lo que llevan dentro.',
-    valores: [
-      { title: 'Honestidad', description: 'Decir y hacer desde la verdad.' },
-      { title: 'Respeto', description: 'Cuidar a las personas, sus tiempos, sus ideas y sus límites.' },
-      { title: 'Compromiso', description: 'Involucrarnos de verdad con aquello que decidimos construir.' },
-      { title: 'Coherencia', description: 'Procurar que lo que somos, pensamos y hacemos tenga sentido entre sí.' },
-      { title: 'Creatividad', description: 'Encontrar nuevas formas de dar vida a las ideas.' },
-      { title: 'Cuidado', description: 'Tratar cada proyecto como algo que merece atención, paciencia y dedicación.' },
-    ],
-  },
-  // Secciones que la ficha deja explícitamente abiertas para más adelante.
-  placeholders: {
-    fotografia: '[Espacio reservado para fotografía editorial de Sara — pendiente de sesión de fotos real]',
-    experiencia: '[Espacio reservado para experiencia — contenido aún no proporcionado]',
-    proyectos: '[Espacio reservado para proyectos — contenido aún no proporcionado]',
-  },
 }
 
 export const journal = {
@@ -192,11 +162,10 @@ export const journal = {
 }
 
 export const contact = {
-  eyebrow: 'Creemos juntos',
-  title: 'Creemos juntos',
-  intro:
-    'Este espacio es el primer paso para trabajar juntos. Aquí podrás pre-agendar nuestra conversación y compartir información clave sobre tu proyecto. Esto me permite prepararme mejor y aprovechar al máximo nuestro espacio.',
-  cta: 'Solicitar una cita',
+  eyebrow: 'Empezar',
+  title: 'Empezar',
+  intro: 'Cuestionario para solicitud de cita.',
+  cta: 'Empezar',
   formUrl: 'https://tally.so/r/9q2KgQ',
   // Estructura exacta del cuestionario, tal como aparece en "Creemos juntos.docx".
   sections: [

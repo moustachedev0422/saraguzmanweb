@@ -4,78 +4,46 @@ import { contact } from '../data/content.js'
 export default function ContactUs() {
   return (
     <>
-      <section className="pt-40 pb-16 md:pt-48 md:pb-20">
-        <div className="container-page max-w-2xl">
+      <section className="pt-40 pb-20 md:pt-48 md:pb-24">
+        <div className="container-page max-w-3xl">
           <Reveal>
-            <p className="text-xs tracking-[0.35em] uppercase text-stone mb-6">{contact.eyebrow}</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-ink" style={{ fontFamily: 'var(--font-serif)' }}>
+            <p className="mb-6 text-xs tracking-[0.35em] uppercase text-stone">{contact.eyebrow}</p>
+            <h1 className="font-serif text-4xl leading-[0.98] text-ink md:text-6xl" style={{ fontFamily: 'var(--font-serif)' }}>
               {contact.title}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-cafe/80">{contact.intro}</p>
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-cafe/80">{contact.intro}</p>
           </Reveal>
         </div>
       </section>
 
-      {/* Qué te vamos a preguntar — transparencia antes del formulario real */}
-      <section className="bg-cream-2 py-20 md:py-24">
-        <div className="container-page grid md:grid-cols-3 gap-12">
-          {contact.sections.map((section) => (
-            <Reveal key={section.title}>
-              <h2 className="text-xs tracking-[0.3em] uppercase text-stone mb-5">{section.title}</h2>
-              {section.description && (
-                <p className="text-sm text-cafe/70 mb-4 leading-relaxed">{section.description}</p>
-              )}
-              {section.fields && (
-                <ul className="space-y-2">
-                  {section.fields.map((f) => (
-                    <li key={f} className="text-sm text-cafe/75">{f}</li>
-                  ))}
-                </ul>
-              )}
-              {section.questions && (
-                <ul className="space-y-4">
-                  {section.questions.map((q) => (
-                    <li key={q.q} className="text-sm">
-                      <p className="text-cafe/85 font-medium">{q.q}</p>
-                      {q.options && (
-                        <p className="text-cafe/50 mt-1">{q.options.join(' · ')}</p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Formulario real — Tally (mismo cuestionario ya construido por Sara) */}
-      <section className="py-20 md:py-28">
-        <div className="container-page">
+      <section className="bg-cream-2 py-20 md:py-28">
+        <div className="container-page grid items-start gap-12 md:grid-cols-[1.25fr_0.75fr]">
           <Reveal>
-            <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
-              <h2 className="font-serif text-2xl md:text-3xl text-ink" style={{ fontFamily: 'var(--font-serif)' }}>
-                {contact.cta}
-              </h2>
+            <p className="text-xs tracking-[0.3em] uppercase text-stone">Sin requisitos previos</p>
+            <h2 className="mt-5 max-w-xl font-serif text-3xl leading-tight text-ink md:text-5xl" style={{ fontFamily: 'var(--font-serif)' }}>
+              Puedes empezar cuando quieras.
+            </h2>
+            <p className="mt-6 max-w-lg leading-relaxed text-cafe/75">
+              Momento Zero es un espacio de reflexión, no un formulario obligatorio. Puedes llegar a la conversación
+              sin haber respondido ninguna pregunta, con una respuesta o con tu ficha copiada.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="border border-cafe/15 bg-cream p-8 md:p-10">
+              <p className="text-xs tracking-[0.3em] uppercase text-stone">Solicitud de cita</p>
+              <p className="mt-5 font-serif text-2xl leading-snug text-ink" style={{ fontFamily: 'var(--font-serif)' }}>
+                Un espacio para empezar a darle orden a lo que quieres construir.
+              </p>
               <a
                 href={contact.formUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm underline text-stone hover:text-ink transition-colors"
+                className="mt-8 inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm text-cream transition-colors hover:bg-ink-2"
               >
-                Abrir en una pestaña nueva
+                {contact.cta} <span aria-hidden="true">→</span>
               </a>
-            </div>
-            <div className="rounded-2xl overflow-hidden border border-cafe/15 bg-cream">
-              <iframe
-                title="Creemos juntos — solicitud de cita"
-                src={`${contact.formUrl}?transparentBackground=1`}
-                width="100%"
-                height="900"
-                frameBorder="0"
-                marginHeight="0"
-                marginWidth="0"
-              />
+              <p className="mt-4 text-xs leading-relaxed text-stone">Se abrirá el agendamiento en una pestaña nueva.</p>
             </div>
           </Reveal>
         </div>

@@ -10,7 +10,7 @@ export default function JournalPost() {
     return (
       <div className="container-page pt-40 pb-32 text-center">
         <p className="text-stone">No encontramos este artículo.</p>
-        <Link to="/laboratorio-de-suenos" className="mt-4 inline-block underline">
+        <Link to="/explorar" className="mt-4 inline-block underline">
           Volver a Laboratorio de sueños
         </Link>
       </div>
@@ -21,7 +21,7 @@ export default function JournalPost() {
     <article className="pt-40 pb-32 md:pt-48">
       <div className="container-page max-w-3xl">
         <Reveal>
-          <Link to="/laboratorio-de-suenos" className="text-sm text-stone hover:text-ink transition-colors">
+          <Link to="/explorar" className="text-sm text-stone hover:text-ink transition-colors">
             ← Laboratorio de sueños
           </Link>
           {article.isPlaceholder && (
