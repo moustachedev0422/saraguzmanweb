@@ -20,7 +20,26 @@ export default function Journal() {
         </div>
       </section>
 
-      <section className="bg-cream-2 py-20 md:py-24">
+      <section className="border-y border-cafe/10 bg-cream-2 py-20 md:py-24">
+        <div className="container-page">
+          <Reveal>
+            <p className="max-w-2xl font-serif text-2xl leading-snug text-ink md:text-3xl" style={{ fontFamily: 'var(--font-serif)' }}>
+              Experiencias, herramientas, y reflexiones para lo que todavía está tomando forma.
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-px bg-cafe/15 md:grid-cols-3">
+            {journal.categories.map((category, index) => (
+              <Reveal key={category.title} delay={index * 0.08} className="bg-cream p-8 md:p-10">
+                <span className="text-xs tracking-[0.3em] uppercase text-stone">{String(index + 1).padStart(2, '0')}</span>
+                <h2 className="mt-5 font-serif text-3xl text-ink" style={{ fontFamily: 'var(--font-serif)' }}>{category.title}</h2>
+                <p className="mt-4 leading-relaxed text-cafe/75">{category.description}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24">
         <div className="container-page grid md:grid-cols-2 gap-14">
           <Reveal>
             <h2 className="text-xs tracking-[0.3em] uppercase text-stone mb-4">Origen</h2>

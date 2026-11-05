@@ -51,7 +51,6 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div className="container-page py-6 flex flex-col md:flex-row gap-2 items-center justify-between text-xs text-cream/40">
           <p>{footer.copyright}</p>
-          <p className="italic">{footer.legalPlaceholder}</p>
         </div>
       </div>
     </footer>

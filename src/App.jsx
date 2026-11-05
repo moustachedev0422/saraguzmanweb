@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Journal from './pages/Journal.jsx'
 import ContactUs from './pages/ContactUs.jsx'
+import Methodology from './pages/Methodology.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 function ScrollToTop() {
@@ -37,7 +38,7 @@ export default function App() {
           <Route path="/explorar" element={<Journal />} />
           <Route path="/explorar/:slug" element={<Navigate to="/explorar" replace />} />
           <Route path="/empezar" element={<ContactUs />} />
-          <Route path="/metodologia" element={<Navigate to="/#momento-cero" replace />} />
+          <Route path="/metodologia" element={<Methodology />} />
           <Route path="/sobre-mi" element={<Navigate to="/sara" replace />} />
           <Route path="/laboratorio-de-suenos" element={<Navigate to="/explorar" replace />} />
           <Route path="/laboratorio-de-suenos/:slug" element={<Navigate to="/explorar" replace />} />

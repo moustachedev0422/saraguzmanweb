@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import Reveal from '../components/Reveal.jsx'
-import MomentZero from '../components/MomentZero.jsx'
 import { home } from '../data/content.js'
 
 export default function Home() {
+  const [declaration, setDeclaration] = useState('')
+  const methodologyUrl = declaration.trim()
+    ? `${home.heroCta.to}?declarar=${encodeURIComponent(declaration.trim())}`
+    : home.heroCta.to
+
   return (
     <>
       <section className="relative overflow-hidden bg-cream">
@@ -26,16 +30,23 @@ export default function Home() {
             {home.heroTitle}
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-10 max-w-xl font-sans italic text-2xl text-cafe md:text-4xl"
+            className="mt-10 max-w-xl"
           >
-            {home.heroQuestion}
-          </motion.p>
-
-          <div className="mt-8 w-56 border-t border-cafe/35" aria-hidden="true" />
+            <label htmlFor="declarar-idea" className="font-sans italic text-2xl text-cafe md:text-4xl">
+              {home.heroQuestion}
+            </label>
+            <input
+              id="declarar-idea"
+              value={declaration}
+              onChange={(event) => setDeclaration(event.target.value)}
+              placeholder="Escribe aquí"
+              className="mt-6 block w-full border-b border-cafe/35 bg-transparent pb-3 font-serif text-xl text-ink outline-none placeholder:font-sans placeholder:text-base placeholder:italic placeholder:text-stone focus:border-ink md:text-2xl"
+            />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -44,7 +55,7 @@ export default function Home() {
             className="mt-10"
           >
             <Link
-              to={home.heroCta.to}
+              to={methodologyUrl}
               className="inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3.5 text-sm tracking-wide text-cream transition-colors hover:bg-ink-2"
             >
               {home.heroCta.label}
@@ -54,73 +65,6 @@ export default function Home() {
         </div>
 
         <div className="pointer-events-none absolute -right-24 top-16 h-72 w-72 rounded-full bg-sand/15 blur-3xl" />
-      </section>
-
-      <MomentZero />
-
-      {/* ---------------------------------------------------------------- */}
-      {/* UNIVERSO DE SARA */}
-      {/* ---------------------------------------------------------------- */}
-      <section className="py-28 md:py-36">
-        <div className="container-page">
-          <Reveal>
-            <p className="text-xs tracking-[0.35em] uppercase text-stone mb-4">El universo de Sara</p>
-            <h2 className="font-serif text-3xl md:text-5xl max-w-xl text-ink" style={{ fontFamily: 'var(--font-serif)' }}>
-              Un mismo espacio, cuatro formas de explorarlo
-            </h2>
-          </Reveal>
-
-          <div className="mt-16 grid gap-px md:grid-cols-2 bg-cafe/10">
-            {home.universe.map((area, i) => (
-              <Reveal key={area.key} delay={i * 0.08}>
-                <Link
-                  to={area.to}
-                  className="group relative block bg-cream p-10 md:p-14 h-full min-h-[260px] flex flex-col justify-between transition-colors hover:bg-ink hover:text-cream"
-                >
-                  <div>
-                    <span className="text-xs tracking-[0.3em] uppercase text-stone group-hover:text-sand transition-colors">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <h3
-                      className="mt-4 font-serif text-3xl md:text-4xl"
-                      style={{ fontFamily: 'var(--font-serif)' }}
-                    >
-                      {area.title}
-                    </h3>
-                    <p className="mt-2 text-sm uppercase tracking-wide text-stone group-hover:text-sand/80 transition-colors">
-                      {area.subtitle}
-                    </p>
-                  </div>
-                  <p className="mt-8 text-base text-cafe/70 group-hover:text-cream/80 transition-colors max-w-sm">
-                    {area.description}
-                  </p>
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm group-hover:translate-x-1 transition-transform">
-                    Explorar <span aria-hidden="true">→</span>
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------------------- */}
-      {/* CTA FINAL */}
-      {/* ---------------------------------------------------------------- */}
-      <section className="bg-ink text-cream py-28 md:py-36">
-        <div className="container-page text-center">
-          <Reveal>
-            <h2 className="font-sans italic font-medium text-4xl md:text-6xl max-w-2xl mx-auto text-sand">
-              Un espacio para iniciar un proceso y solicitar una cita.
-            </h2>
-            <Link
-              to="/empezar"
-              className="mt-10 inline-flex items-center gap-3 rounded-full bg-sand text-ink px-8 py-4 text-sm tracking-wide hover:bg-cream transition-colors"
-            >
-              Empezar <span aria-hidden="true">→</span>
-            </Link>
-          </Reveal>
-        </div>
       </section>
     </>
   )

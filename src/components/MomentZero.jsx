@@ -32,9 +32,9 @@ function Hourglass({ progress, step }) {
   )
 }
 
-export default function MomentZero() {
+export default function MomentZero({ initialDeclaration = '' }) {
   const [active, setActive] = useState(null)
-  const [answers, setAnswers] = useState(() => Object.fromEntries(steps.map((step) => [step.title, ''])))
+  const [answers, setAnswers] = useState(() => Object.fromEntries(steps.map((step) => [step.title, step.title === 'Declarar' ? initialDeclaration : ''])))
   const [saved, setSaved] = useState(false)
   const completedSteps = Object.values(answers).filter((answer) => answer.trim().length > 0).length
   const progress = completedSteps / steps.length

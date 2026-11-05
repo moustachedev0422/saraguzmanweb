@@ -18,7 +18,6 @@ export const brand = {
   email: 'saraguzman@proyectosg.com',
   instagram: { handle: 'projects.sg', url: 'https://www.instagram.com/projects.sg' },
   tiktok: { handle: '@projects.sg', url: 'https://www.tiktok.com/@projects.sg', status: '@projects.sg' },
-  creemosJuntosForm: 'https://tally.so/r/9q2KgQ',
 }
 
 export const nav = [
@@ -31,7 +30,7 @@ export const nav = [
 export const home = {
   heroTitle: 'El orden de los sueños.',
   heroQuestion: '¿Qué quieres que exista?',
-  heroCta: { label: 'Iniciar', to: '/#momento-cero' },
+  heroCta: { label: 'Iniciar', to: '/metodologia' },
   // Frases reales de "Frases para imágenes de Instagram.docx", también presentes
   // en las piezas de referencia 01/02/03.jpg — usadas como micro-relato de scroll.
   scrollStory: [
@@ -45,7 +44,7 @@ export const home = {
       title: 'Momento Zero',
       subtitle: 'Momento Zero',
       description: 'La estructura detrás de Momento Zero. Mi acompañamiento.',
-      to: '/#momento-cero',
+      to: '/metodologia',
     },
     {
       key: 'sobre-mi',
@@ -145,6 +144,11 @@ export const journal = {
     'Integración de reflexión, claridad conceptual y aplicación práctica.',
     'Coherencia con una metodología propia de acompañamiento real.',
   ],
+  categories: [
+    { title: 'Reflexiones', description: 'Ideas para hacer una pausa, observar y darle sentido a lo que estás construyendo.' },
+    { title: 'Herramientas', description: 'Recursos prácticos para ordenar, definir y poner en movimiento tus proyectos.' },
+    { title: 'Experiencias', description: 'Aprendizajes nacidos de procesos reales que siguen tomando forma.' },
+  ],
   // No hay artículos reales entregados todavía. Se deja UN artículo de muestra,
   // claramente marcado, únicamente para validar la plantilla de tarjeta/artículo.
   // No debe presentarse como contenido publicado.
@@ -165,8 +169,6 @@ export const contact = {
   eyebrow: 'Empezar',
   title: 'Empezar',
   intro: 'Cuestionario para solicitud de cita.',
-  cta: 'Empezar',
-  formUrl: 'https://tally.so/r/9q2KgQ',
   // Estructura exacta del cuestionario, tal como aparece en "Creemos juntos.docx".
   sections: [
     {
@@ -215,6 +217,5 @@ export const contact = {
 }
 
 export const footer = {
-  copyright: `© ${new Date().getFullYear()} Sara Guzmán. Todos los derechos reservados.`,
-  legalPlaceholder: '[Espacio reservado para elementos legales — pendiente de contenido]',
+  copyright: '© 2026 Sara Guzmán. Todos los derechos reservados.',
 }
