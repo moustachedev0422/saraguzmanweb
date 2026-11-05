@@ -7,10 +7,10 @@ export default function About() {
     <>
       <section className="relative isolate overflow-hidden bg-cream pt-40 pb-24 md:pt-48 md:pb-32">
         <img
-          src="/assets/banner-sara.png"
+          src="/assets/banner-sara-portrait.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-75"
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover object-right opacity-90"
         />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-cream via-cream/85 to-cream/25" />
         <div className="container-page max-w-4xl">

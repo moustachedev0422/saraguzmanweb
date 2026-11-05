@@ -167,50 +167,18 @@ export const journal = {
 
 export const contact = {
   eyebrow: 'Empezar',
-  title: 'Empezar',
-  intro: 'Cuestionario para solicitud de cita.',
-  // Estructura exacta del cuestionario, tal como aparece en "Creemos juntos.docx".
+  title: 'Creemos juntos',
+  intro: 'Cuéntame qué quieres que exista?',
   sections: [
     {
       title: 'Información básica',
-      fields: [
-        'Nombre completo',
-        'Fecha de nacimiento',
-        'Hora de nacimiento',
-        'Cédula',
-        'Teléfono',
-        'Correo electrónico',
-        'Nombre de empresa o proyecto (Opcional)',
-        'Instagram/Página Web (Opcional)',
-        'Link de referencia (Opcional)',
-      ],
+      fields: ['Nombre completo', 'Correo electrónico'],
     },
     {
-      title: 'Contexto del proyecto',
+      title: 'Tu idea',
       questions: [
-        {
-          q: '¿En qué tipo de proyecto estás trabajando?',
-          options: [
-            'Emprendimiento', 'Empresa o negocio', 'Marca personal', 'Producto o servicio',
-            'Proyecto artístico o cultural', 'Evento', 'Proyecto social', 'Proyecto educativo',
-            'Proyecto tecnológico', 'Proyecto ambiental', 'Otro',
-          ],
-        },
-        { q: '¿Por qué existe este proyecto?', freeText: 'Describe qué necesidad, problema o situación te motivó a crearlo y cuál esperas que sea el impacto que genere cuando esté funcionando.' },
-        { q: '¿En qué etapa estás?', options: ['Idea inicial', 'Estoy validando la idea', 'Ya inicié, pero necesito organización', 'Está en funcionamiento', 'Está creciendo', 'Necesita una reestructuración'] },
-        { q: '¿Cuál consideras que es hoy el mayor reto de tu proyecto?', options: ['Falta de claridad', 'Falta de organización', 'Planeación', 'Recursos económicos', 'Conseguir clientes o usuarios', 'Formar un equipo', 'Ejecución', 'Comunicación o marketing', 'Otro'] },
-        { q: '¿Qué has intentado hasta ahora?', options: ['Lo he trabajado por mi cuenta', 'He tomado cursos o mentorías', 'He trabajado con otros profesionales', 'Aún no he hecho mucho', 'Otro'] },
-        { q: '¿Qué nivel de compromiso tienes actualmente con tu proyecto?', options: ['Estoy explorando posibilidades', 'Estoy comenzando a tomar acción', 'Estoy comprometido/a con construirlo seriamente', 'Estoy listo/a para invertir tiempo, energía y recursos en su crecimiento', 'Actualmente mi proyecto es una prioridad'] },
-        { q: '¿Cuánto tiempo puedes dedicarle actualmente al proyecto?', options: ['Menos de 5 horas por semana', 'Entre 5 y 10 horas', 'Entre 10 y 20 horas', 'Más de 20 horas'] },
-        { q: '¿Qué tan abierto estás a cuestionar, reorganizar o transformar partes de tu proyecto durante el proceso?', options: ['Poco abierto/a', 'Moderadamente abierto/a', 'Muy abierto/a', 'Totalmente dispuesto/a a reconstruir lo necesario para crecer'] },
-        { q: '¿Hay algo más que debería saber antes de nuestra conversación?', freeText: true },
-      ],
-    },
-    {
-      title: 'Disponibilidad',
-      description: 'A continuación podrás compartir la disponibilidad que mejor se ajuste a tus tiempos para una conversación inicial de máximo una hora, en un espacio en el que puedas conversar con tranquilidad.',
-      questions: [
-        { q: '¿Qué días suelen ajustarse mejor a tu disponibilidad?', options: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'] },
+        { q: '¿Qué quieres que empiece a existir?', freeText: true },
+        { q: '¿Para quién quieres construirlo?', freeText: true },
       ],
     },
   ],

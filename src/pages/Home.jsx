@@ -13,10 +13,10 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden bg-cream">
         <img
-          src="/assets/banner-orden-suenos.png"
+          src="/assets/banner-orden-suenos-reloj.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[62%_center] opacity-80"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right opacity-90"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/20" />
         <div className="container-page relative z-10 flex min-h-[88vh] flex-col justify-center py-28 md:py-32">
