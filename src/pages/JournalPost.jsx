@@ -26,7 +26,7 @@ export default function JournalPost() {
           </Link>
           {article.isPlaceholder && (
             <p className="mt-6 text-xs uppercase tracking-widest bg-mark/40 text-cafe inline-block px-3 py-1 rounded-full">
-              Plantilla de ejemplo — sin contenido real todavía
+              Plantilla de ejemplo - sin contenido real todavía
             </p>
           )}
           <h1 className="font-serif text-4xl md:text-5xl text-ink mt-6 leading-tight" style={{ fontFamily: 'var(--font-serif)' }}>
@@ -37,7 +37,7 @@ export default function JournalPost() {
 
         <Reveal delay={0.1}>
           <div className="mt-10 aspect-video bg-cream-2 border border-dashed border-cafe/25 rounded-2xl flex items-center justify-center">
-            <span className="text-xs text-stone italic">Imagen destacada — pendiente</span>
+            <span className="text-xs text-stone italic">Imagen destacada - pendiente</span>
           </div>
         </Reveal>
 

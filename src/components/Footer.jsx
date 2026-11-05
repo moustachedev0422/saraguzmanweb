@@ -18,10 +18,10 @@ export default function Footer() {
     <footer className="bg-ink text-cream mt-32">
       <div className="container-page py-16 grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <Link to="/" className="block h-32 w-72 overflow-hidden sm:h-36 sm:w-80" aria-label="Sara Guzmán — Inicio">
+          <Link to="/" className="block h-32 w-72 overflow-hidden sm:h-36 sm:w-80" aria-label="Sara Guzmán - Inicio">
             <img
               src="/assets/logo-sara-footer.svg"
-              alt="Sara Guzmán — Claridad & Transformación"
+              alt="Sara Guzmán - Claridad & Transformación"
               className="h-full w-full object-cover object-[50%_55%]"
             />
           </Link>

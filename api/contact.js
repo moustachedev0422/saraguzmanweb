@@ -130,7 +130,7 @@ export default {
     const emailPayload = {
       from: process.env.RESEND_FROM || DEFAULT_FROM,
       to: [DESTINATION_EMAIL],
-      subject: `Solicitud de cita${name ? ` — ${name}` : ''}`,
+      subject: `Solicitud de cita${name ? ` - ${name}` : ''}`,
       text: buildEmailText(answers),
     }
 

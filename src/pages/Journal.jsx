@@ -56,7 +56,7 @@ export default function Journal() {
             <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
               {journal.diferencial.map((item) => (
                 <li key={item} className="text-cafe/75 leading-relaxed flex gap-3">
-                  <span className="text-sand-2">—</span>
+                  <span className="text-sand-2">-</span>
                   {item}
                 </li>
               ))}
